@@ -223,7 +223,7 @@
                         <span class="text-[10px] font-mono text-text-dim tracking-widest">TIMELINE</span>
                         <span class="text-[10px] font-mono text-text-dim" id="timeline-duration">0:00</span>
                     </div>
-                    <div class="relative h-10 select-none" id="timeline-container">
+                    <div class="relative h-10 select-none overflow-hidden" id="timeline-container">
                         <div class="absolute w-full h-[3px] bg-border top-1/2 -translate-y-1/2 rounded-full"></div>
                     </div>
                     <!-- Time labels -->
@@ -411,8 +411,10 @@
 
         if (!r) return;
         r.violations.forEach(v => {
-            const left = (v.timestamp_start / dur) * 100;
-            const w = Math.max(((v.timestamp_end - v.timestamp_start) / dur) * 100, 0.8);
+            const safeStart = Math.max(0, Math.min(v.timestamp_start, dur));
+const safeEnd = Math.max(safeStart, Math.min(v.timestamp_end, dur));
+const left = (safeStart / dur) * 100;
+const w = Math.max(((safeEnd - safeStart) / dur) * 100, 0.8);
             const sel = state.selectedViolation && state.selectedViolation.id === v.id;
 
             const el = document.createElement('div');
