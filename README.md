@@ -8,7 +8,7 @@ Built by Tony Gallo, Industry Frequency LLC | TwelveLabs Video Intelligence for 
 
 Compliance Guardian scans video content against user-defined compliance rules and produces a timestamped, confidence-ranked violation report with full audit trail. Upload a video, define rules in plain English, get results in under 2 minutes.
 
-**Demo video:** [3-minute walkthrough]([https://youtu.be/QeQp6GXjrdM?si=EtBYHqPoB5Vi4XDt])
+**Demo video:** [3-minute walkthrough](https://youtu.be/QeQp6GXjrdM?si=EtBYHqPoB5Vi4XDt)
 
 ## Quick Start (< 5 minutes)
 
